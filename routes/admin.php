@@ -1,9 +1,17 @@
 <?php
 
-
-// Admin routes
-
 use App\Http\Controllers\Backend\AdminController;
-use Illuminate\Routing\Route;
+use App\Http\Controllers\Backend\ProfileController;
+use Illuminate\Support\Facades\Route;
+use Pest\Plugins\Profile;
 
-Route::get('admin/dashboard',[AdminController::class, 'dashboard'])->middleware('auth', 'role:admin')->name('admin.dashboard');
+/** Admin Routes */
+
+Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashbaord');
+
+// Profile Routes --------------------------------
+
+Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+Route::post('profile/update/password', [ProfileController::class, 'updatePassword'])->name('password.update');
+
