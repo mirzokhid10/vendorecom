@@ -9,8 +9,9 @@
             </div>
             <div class="col-xl-2 col-7 col-md-8 col-lg-2">
                 <div class="wsus_logo_area">
-                    <a class="wsus__header_logo" href="{{url('/')}}">
-                        <img src="" alt="logo" class="img-fluid w-100">
+                    {{-- {{url()}} --}}
+                    <a class="wsus__header_logo" href="">
+                        <img src="{{asset('frontend/images/logo.png')}}" alt="logo" class="img-fluid w-100">
                         {{-- {{asset($logoSetting->logo)}} --}}
                     </a>
                 </div>
@@ -40,11 +41,11 @@
                     <ul class="wsus__icon_area">
                         {{-- {{route('user.wishlist.index')}} --}}
                         <li><a href=""><i class="fal fa-heart"></i><span id="wishlist_count">
-                            @if (auth()->check())
+                            {{-- @if (auth()->check())
                             {{\App\Models\Wishlist::where('user_id', auth()->user()->id)->count()}}
                             @else
                             0
-                            @endif
+                            @endif --}}
                         </span></a></li>
                         {{-- <li><a href="compare.html"><i class="fal fa-random"></i><span>03</span></a></li> --}}
                         <li><a class="wsus__cart_icon" href="#"><i class="fal fa-shopping-bag"></i><span id="cart-count"></span></a></li>
